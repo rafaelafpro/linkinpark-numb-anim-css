@@ -36,7 +36,7 @@ function start() {
   }
 
 
-
+  audio.muted = true;
   audio.play();
   const bars = document.querySelectorAll(".bar");
 
