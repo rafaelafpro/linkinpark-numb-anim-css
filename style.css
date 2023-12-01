@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+body{
+    margin: 0;
+  padding: 0;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    font-family: 'Tilt Warp', sans-serif;
+    height: 100vh;
+    position: relative;
+
+    background: url("https://unbumf.com/wp-content/uploads/2018/03/Chester-Bennington-Featured-UnBumf.jpg") center center no-repeat;
+    background-size: cover;
+}
+
+body:after{
+    content: '';
+    background-color: black;
+    position: absolute;
+    width: 100%;
+  height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.85;
+    z-index: -2;
+}
+
+#circle{
+  width: 480px;
+  height: 480px;
+  border-radius: 2000px;
+  outline: 20px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 300px;
+    box-shadow: inset 0px 0px 100px 140px rgb(0, 0, 0),
+    0px 0px 16px 24px rgb(228, 228, 228);
+  animation: growx 4s 1s ease;
+  transition: 200ms;
+}
+
+
+
+
+@keyframes flip{
+  50%{
+    transform: scaleX(1);
+  }
+}
+
+
+span{
+    --scale: 1;
+    animation: vibrate-1 0.5s linear 0.2s infinite both;
+    
+  text-shadow: 7px 6px 0px #ff000060, -7px -6px 0px #003fff70;
+  text-transform: italic;
+}
+
+span:nth-child(2){
+    --scale: -1;
+    animation: vibrate-1 0.5s linear 0s infinite alternate;
+   transition: transform 300ms;
+}
+
+span:nth-child(2):hover{
+    --scale: 1;
+    
+}
+
+@keyframes growx{
+    0%{
+        transform: scale(0.9);
+    }
+  
+   80%{
+    transform: scale(1.1);
+   }
+}
+
+@keyframes pulsex{
+    0%{
+
+    }
+    
+    50%{
+        width: 440px;
+        height: 440px;
+    }
+
+    60%{
+        width: 530px;
+        height: 530px;
+    }
+
+    90%{
+        width: 460px;
+        height: 460px;
+    }
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0) scaleX(var(--scale));
+            transform: translate(0) scaleX(var(--scale));
+  }
+  20% {
+    -webkit-transform: translate(-4px, 4px) scaleX(var(--scale));
+            transform: translate(-4px, 4px) scaleX(var(--scale));
+  }
+  40% {
+    -webkit-transform: translate(-4px, -4px) scaleX(var(--scale));
+            transform: translate(-4px, -4px) scaleX(var(--scale));
+  }
+  60% {
+    -webkit-transform: translate(4px, 4px) scaleX(var(--scale));
+            transform: translate(4px, 4px) scaleX(var(--scale));
+  }
+  80% {
+    -webkit-transform: translate(4px, -4px) scaleX(var(--scale));
+            transform: translate(4px, -4px) scaleX(var(--scale));
+  }
+  100% {
+    -webkit-transform: translate(0) scaleX(var(--scale));
+            transform: translate(0) scaleX(var(--scale));
+  }
+}
+
+
+
+
+.bar-w{
+    /* box-sizing: border-box; */
+    width: 500px;
+    height: 500px;
+      /* border: 30px solid red; */
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(var(--deg));
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    
+    
+}
+
+.bar{
+    width: 16px;
+    height: 100px;
+    background-color: white;
+    transform: translate(-50%, calc(-50% - 20px));
+    position: absolute;
+    left: 50%;
+    animation: grow-0 4s ease-in-out var(--delay) backwards;   
+    border-radius: 6px;
+    transition: 100ms;
+}
+
+/* .bar-w:nth-child(2){
+    transform: translate(calc(-50% + 20px), -50%) rotate(5deg);
+}  */
+
+/* .bar-w{
+  background-color: white;
+  width: 20px;
+  height: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: -1;
+   
+}*/
+
+@keyframes grow-0{
+    0%{
+        height: 0px;
+        opacity: 0;
+    }
+
+    60%{
+        height: 120px;
+        opacity: 1;
+    }
+
+    100%{
+        height: 80px;
+        opacity: 0.8;
+    }
+}
+
+
+@keyframes grow{
+  0%{
+    opacity: 0.8;
+  }
+
+  20%{
+    height: 50px;
+  }
+
+  30%{
+    height: 80px;
+    opacity: 0.8;
+  }
+
+  50%{
+    height: 120px;
+  }
+
+  70%{
+    height: 90px;
+    opacity: 0.8; 
+  }
+
+  90%{
+    height: 140px;
+  }
+
+
+}
+
+#playAudio{
+  display: none;
+}
